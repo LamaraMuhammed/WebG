@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/css/SignUp.css">
+    
+    <title>WebG</title>
+</head>
+<body>
+    <div class="succPop">
+        <span>&#10004</span>
+        <p>Welcome To WebG You Have Successfully Registered</p>
+        <small>You would soon redirected to Login page after you copied your PsNo</small>
+    </div>
+    <span class="bigErr"></span>
+    <section class="container">
+        <div class="header">
+            <h2>WebG Account Creation</h2>
+        </div>
+        <form>
+            <span id="mblErr"></span>
+            <div class="badge">
+                <input type="text" placeholder="First Name" id="firstName">
+                <input type="text" placeholder="Last Name" name="last_name" id="lastName">
+            </div>
+            
+            <div class="badge">
+                <div class="phoneNo">
+                    <label for="phone_no">+234</label>
+                    <input type="text" placeholder="Phone Number" name="phone_no" id="phone_no" maxlength="11">
+                </div>
+                <input type="password" placeholder="Password" name="password" id="password">
+            </div>
+
+            <div class="radiobadge">
+                <input type="date" name="age" id="age">
+                <div class="radio">
+                    <label for="Male">Male</label>
+                    <input type="radio" class="radioInput" name="gender" id="Male">
+                    <label for="Female">Female</label>
+                    <input type="radio" class="radioInput" name="gender" id="Female"> 
+                    <label for="Neuter">Neuter</label>
+                    <input type="radio" class="radioInput" name="gender" id="Neuter">
+                </div>
+            </div>
+
+            <div class="badge">
+                <input type="text" placeholder="State Of Origin" name="state" id="state">
+                <input type="text" placeholder="Town/City/LGA" name="LGA" id="town">
+            </div>
+            
+            <div class="psbadge">
+                <h5 class="ps">****</h5><small id="copy">Copy</small>
+                <i>The * field is your Ps number field don't let it known!</i>
+            </div>
+            <div class="badge">
+                <input type="submit" value="Sign Up" id="submitBtn">
+            </div>
+            <h5>Already have an Account? <a href="/WebG/LogIn">Sign in</a></h5>
+            <h6>Welcome to WebG developed @2024.</h6>
+        </form>
+    </section>
+    
+    <script src="/js/SignUp.js"></script>
+</body>
+</html>

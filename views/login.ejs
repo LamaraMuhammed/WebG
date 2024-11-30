@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/LogIn.css">
+    <title>WebG</title>
+</head>
+<body>
+    <div id="formContainer">
+        <div class="outerContainer">
+            <h1>WebG</h1>
+            <p>You can log into your account using phone number or ps number and connect, meet, show places to your guest friend and many more.</p>
+            <p id="err"></p>
+            <section class="container">
+                <form>
+                    <div class="choice">
+                        <span id="phn">Phone Number</span>
+                        <span id="ps">PS Number</span>
+                    </div>
+                    <div class="inputs">
+                        <div class="col-1">
+                            <label for="phone_no">+234</label>
+                            <input type="text" placeholder="Phone Number" maxlength="11" name="phone_no" id="phone_no">
+                            <input type="password" placeholder="Password" name="password" id="password">
+                        </div>
+                        <div class="col-2"></div>
+                    </div>
+                    <input type="submit" value="Log In" id="submitBtn">
+                    <h5>Don't have an Account? <a href="/WebG/Sign-Up">Sign Up</a></h5>
+                    <h6>Welcome to WebG developed @2024.</h6>
+                </form>
+            </section>
+        </div>
+    </div>
+    <div class="doubleDevice">
+        <div class="body">
+            <div class="header">
+                <h4>Security Issue</h4>
+            </div>
+            <div class="icon">
+                <span>&#33</span>
+            </div>
+            <div class="message">
+                <p>
+                    You have logged in with this Account on another device, and we recommended using one device per account for security purposes. Do you want to sign out that device or remain ?
+                </p>
+                <div>
+                    <button id="SignOut">Sign Out</button>
+                    <button id="Remain">Remain</button>
+                </div>
+            </div>
+            <div class="logo">
+                <footer>WebG</footer>
+            </div>
+        </div>
+    </div>
+    <script src="/js/LogIn.js"></script>
+</body>
+</html>

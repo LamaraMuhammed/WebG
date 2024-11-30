@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account-Setting</title>
+    <style>
+        .container{
+            margin: 0 ;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container header{
+            display: flex;
+            width: 100%;
+            background-color: #050c74;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            color: #eee;
+            justify-content: center;
+            line-height: 30px;
+            font-size: 0.9em;
+        }
+        .container header b{
+            display: flex;
+            transform: rotate(180deg);
+            position: inherit;
+            left: 10px;
+            cursor: default;
+        }
+        .container div{
+            display: flex;
+            flex-direction: column;
+            margin: 0 auto;
+            padding: 20px 0;
+            width: 75%;
+        }
+        .container div label{
+            font-size: 0.8em;
+            margin: 4px 0;
+            font-weight: 600;
+            width: 100%;
+        }
+        .container div input{
+            border: none;
+            outline: none;
+            border-bottom: 1px solid black;
+            width: 100%;
+        }
+        .container div input:focus{
+            border: none;
+            outline: none;
+            border-bottom: 2px solid #050c74;;
+            width: 100%;
+        }
+        .container small{
+            display: flex;
+            margin: 0 auto;
+            justify-content: center;
+            margin-top: 20%;
+            background-color: #050c74;
+            padding: 4px;
+            color: rgb(255, 0, 0);
+            width: 50%;
+            border-radius: 4px;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 1s, visibility 1s;
+        }
+        .container .notify{
+            visibility: visible;
+            opacity: 1;
+        }
+        .container footer{
+            display: flex;
+            position: absolute;
+            justify-content: center;
+            left: 0;
+            right: 0;
+            bottom: 2%;
+            font-weight: 900;
+            color: #050c74;
+        }
+        @media (max-width: 481px) {
+            .container div{
+                display: flex;
+                flex-direction: column;
+                margin: 0 auto;
+                margin-left: 10px;
+                padding: 20px 0;
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="inner">
+            <header>
+                <b id="nav">&#10142;</b>
+                Account Setting 
+            </header>
+            <div>
+                <label for="nickname">Add NickName</label>
+                <input type="text" id="nickname">
+            </div>
+            <div>
+                <label for="phoneNo">Update Your Phone Number</label>
+                <input type="text" id="phoneNo">
+            </div>
+            <div>
+                <label for="psNo">Regenerate Ps Number</label>
+                <input type="text" id="psNo">
+            </div>
+        </div>
+        <small>On Process !</small>
+        <div>
+            <footer>WebG</footer>
+        </div>
+    </div>
+    <script defer="true">
+        var nickname = document.getElementById("nickname");
+        var phoneNo = document.getElementById("phoneNo");
+        var psNo = document.getElementById("psNo");
+        nickname.addEventListener('focus', f => {
+            notifyUser();
+        });
+        phoneNo.addEventListener('focus', f => {
+            notifyUser();
+        });
+        psNo.addEventListener('focus', f => {
+            notifyUser();
+        });
+        function notifyUser() {
+            document.querySelector("small").classList.add('notify');
+            setTimeout(() => {
+                document.querySelector("small").classList.remove('notify');
+            }, 5000);
+        }
+        document.getElementById("nav").addEventListener("click", cl => {
+            window.location.href = "/WebG/Home";
+        });
+    </script>
+</body>
+</html>

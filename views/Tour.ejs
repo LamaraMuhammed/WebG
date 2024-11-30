@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/Tour.css">
+    
+    <!-- Socket  -->
+    <script src="/socket.io/socket.io.js"></script>
+
+    <!-- Leaflet css -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+
+    <!-- Leaflet js -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""></script>
+
+    <!-- ------------------------------------ Leaflet Plugins ------------------------------------------------ -->
+    <link rel="stylesheet" href="/leaflet.markercluster/dist/MarkerCluster.Default.css" />
+    <script src="/leaflet.markercluster/dist/leaflet.markercluster.js"></script>
+
+    
+    <!-- Boxicons -->
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+
+    <title>WebG</title>
+</head>
+<body>
+    <header>
+        <ul>
+            <li id="nav">&#10142;</li>
+            <li><h4>WebG</h4></li>
+            <li><input type="text" placeholder="Search Place Here" maxlength="25"></li>
+            <li><div class="bx bx-search"></div></li>
+            <li><img id="profileImg" alt=""></li>
+        </ul>
+        <div class="subHeader">
+            <ol>
+                <li class="selectors active">All</li>
+                <li class="selectors">Incident</li>
+                <li class="selectors">Events</li>
+                <li class="selectors">News</li>
+                <li class="selectors">Live</li>
+            </ol>
+        </div>
+    </header>
+    <div id="map"></div>
+    <footer></footer>
+
+    <script src="/js/Tour/Tour-g.js"></script>
+    <script type="module" src="/js/Tour/Tour-mp.js"></script>
+    <script type="module" src="/js/Tour/Tour-sk.js"></script>
+</body>
+</html>

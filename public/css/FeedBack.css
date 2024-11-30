@@ -1,0 +1,358 @@
+.container, .innerContainer{
+    display: flex;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    background-color: #050c74;
+    overflow: hidden;
+}
+.container header{
+    display: flex;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #050c74;
+    color: #fff;
+    line-height: 35px;
+    z-index: 100;
+}
+.container header b{
+    transform: rotate(180deg);
+    margin-left: 20px;
+    cursor: default;
+}
+.container header h3{
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    padding-right: 20px;
+}
+.container .innerContainer{
+    flex-direction: column;
+    width: 75%;
+    background-color: #e0e0e8;
+}
+.msgContainer{
+    background-color: #ffffff;
+    padding: 11px 0;
+    margin-bottom: 45px;
+    overflow: hidden;
+    overflow-y: auto;
+    width: 100%;
+    height: 87vh;
+    gap: 11px;
+    scrollbar-width: thin;
+    scrollbar-width: none;
+}
+.msgContainer::-webkit-scrollbar{
+    width: 0px;
+}
+.shape{
+    display: flex;
+    padding: 0px 20px;
+    margin: 7px auto;
+    margin-bottom: 17px;
+    justify-content: flex-start;
+    gap: 11px;
+}
+.innerContainer .blur{
+    filter: blur(2px);
+}
+img{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: #e0e0e8ab;
+    padding: 2px;
+}
+.shape h6{
+    display: flex;
+    width: 100%;
+    color: #050c74;
+    font-size: .6em;
+    transform: scale(1, 1.1);
+}
+.shape p{
+    display: flex;
+    width: 100%;
+    word-break: break-all;
+    word-wrap: break-word;
+    margin: 7px auto;
+    padding-right: 7px;
+    transform: scale(1, 1.1);
+    color: rgba(0, 0, 0, 0.696);
+}
+.msgContainer .date{
+    display: flex;
+    margin: 3px auto 7px auto;
+    padding: 1px 0;
+    justify-content: center;
+    align-items: center;
+    background-color: #2a2a2a1b;
+}
+.date small{
+    color: #02063a;
+    font-size: .7em;
+}
+.time{
+    display: flex;
+    margin: 3px auto;
+    width: 100%;
+    justify-content: flex-end;
+}
+.time small{
+    font-size: .7em;
+    padding: 0 7px;
+    color: #2a2a2a;
+}
+.time .seen{
+    color: rgb(0, 224, 0);
+}
+.innerContainer .msgInput{
+    display: flex;
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 9px;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    padding: 0 25%;
+    width: 100%;
+    gap: 11px;
+}
+.container .msgInput textarea{
+    display: flex;
+    word-wrap: break-word;
+    outline: none;
+    border: 2px solid #050c74;
+    border-radius: 5px;
+    width: 100%;
+    min-height: 37px;
+    line-height: 17px;
+    font-size: 1.1em;
+    transform: scale(1, 1.3);
+    padding: 7px 10px;
+    margin: auto;
+    margin-bottom: 7px;
+    margin-right: 11px;
+    resize: none;
+    color: black;
+    overflow: hidden;
+    overflow-y: auto;
+    max-height: 100px;
+    scrollbar-width: thin;
+    scrollbar-width: none;
+}
+.container .msgInput textarea::-webkit-scrollbar{
+    width: 0px;
+}
+.msgInput #sendBtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #050c74;
+    font-size: 1.5em;
+    transform: translateY(-3px) scale(1.35, 1.55);
+    transition: transform .3s, font-size 0.3s color 0.3s, ease linear;
+}
+.msgInput #sendBtn:active{
+    color: #02063a;
+    font-size: 1.4em;
+    transform: translateY(-3px) scale(1.3, 1.45);
+}
+._default .default{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #b8bada;
+    width: 100%;
+    margin: 11% auto;
+    padding: 20px 25px;
+    border-radius: 4px;
+    z-index: 1000;
+}
+._default{
+    position: absolute;
+    right: 25%;
+    left: 25%;
+    top: 11%;
+    bottom: 0;
+    margin: auto;
+}
+.default{
+    flex-direction: column;
+    color: #02063ab3;
+    font-size: 1em;
+    word-spacing: 4px;
+    text-align: center;
+}
+.default small{
+    font-size: 0.8em;
+    color: #2a2a2a;
+    text-align: center;
+    margin: 10px;
+}
+.default span{
+    display: flex;
+    margin: auto;
+    font-size: 0.8em;
+    float: inline-end;
+    background-color: #050c74;
+    padding: 3px 17px;
+    border-radius: 4px;
+}
+
+@media screen and (max-width: 481px) and (orientation: portrait) {
+    .container, .innerContainer{
+        background-color: transparent;
+    }
+    .container header{
+        line-height: 30px;
+    }
+    .container header b{
+        margin-left: 10px;
+    }
+    .container header h3{
+        font-size: 1.1em;
+    }
+    .container .innerContainer{
+        width: 100%;
+    }
+    .msgContainer{
+        padding: 11px 0;
+        gap: 0px;
+    }
+    .shape{
+        padding: 0px 10px;
+        margin: 11px auto;
+        margin-bottom: 12px;
+        gap: 7px;
+    }
+    img{
+        width: 37px;
+        height: 37px;
+    }
+    .shape p{
+        margin: 3px auto;
+    }
+    .time small{
+        font-size: .6em;
+    }
+    .time .seen{
+        font-size: .7em;
+    }
+    .innerContainer .msgInput{
+        padding: 0 30px;
+        bottom: 5px;
+        gap: 7px;
+    }
+    .container .msgInput textarea{
+        min-height: 34px;
+        font-size: 1.1em;
+        transform: scale(1, 1.2);
+        max-height: 75px;
+    }
+    .msgInput #sendBtn{
+        font-size: 1.5em;
+        transform: translateY(-3px) scale(1.25, 1.4);
+        transition: transform .3s, font-size 0.3s color 0.3s, ease linear;
+    }
+    .msgInput #sendBtn:active{
+        color: #02063a;
+        font-size: 1.4em;
+        transform: translateY(-3px) scale(1.3, 1.45);
+    }
+    ._default .default{
+        padding: 20px 10px;
+    }
+    ._default{
+        right: 5%;
+        left: 5%;
+        top: 11%;
+    }
+    .default{
+        font-size: .9em;
+    }
+}
+
+@media screen and (max-height: 481px) and (orientation: landscape) {
+    .container, .innerContainer{
+        background-color: transparent;
+    }
+    .container header{
+        line-height: 30px;
+    }
+    .container header b{
+        margin-left: 20px;
+    }
+    .container .innerContainer{
+        width: 100%;
+    }
+    .msgContainer{
+        padding-top: 30px;
+        gap: 0px;
+    }
+    .shape{
+        padding: 0px 20px;
+        margin: 11px auto;
+        margin-bottom: 12px;
+        gap: 7px;
+    }
+    img{
+        width: 37px;
+        height: 37px;
+    }
+    .shape h6{
+        font-size: .7em;
+    }
+    .shape p{
+        margin: 3px auto;
+        font-size: 1.1em;
+    }
+    .time small{
+        font-size: .7em;
+    }
+    .innerContainer .msgInput{
+        padding: 0 17%;
+        bottom: 1px;
+        gap: 7px;
+    }
+    .container .msgInput textarea{
+        min-height: 30px;
+        line-height: 10px;
+        transform: scale(1, 1.2);
+        padding: 3px 10px;
+        padding-top: 9px;
+        margin-bottom: 5px;
+        max-height: 50px;
+    }
+    .msgInput #sendBtn{
+        font-size: 1.5em;
+        transform: translateY(-3px) scale(1.25, 1.4);
+        transition: transform .3s, font-size 0.3s color 0.3s, ease linear;
+    }
+    .msgInput #sendBtn:active{
+        color: #02063a;
+        font-size: 1.4em;
+        transform: translateY(-3px) scale(1.3, 1.45);
+    }
+    ._default .default{
+        padding: 20px 10px;
+    }
+    ._default{
+        right: 17%;
+        left: 17%;
+        top: 7%;
+    }
+    .default{
+        font-size: .97em;
+    }
+}

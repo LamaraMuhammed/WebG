@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/FeedBack.css">
+    <link rel="stylesheet" href="/css/home.css">
+    <!-- Socket  -->
+    <script src="/socket.io/socket.io.js"></script>
+    <!-- Boxicons -->
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+    <title>WebG</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <b id="nav">&#10142;</b>
+            <h3>WebG</h3>
+        </header>
+        <div class="innerContainer">
+            <div class="msgContainer"></div>
+            <div class="_default">
+                <p class="default">Your comment on our product is highly needed and importance, to ensure the product is really fits to your needs, and it will help others to use the site for day-to-day navigation.
+                    <small>You can write any good idea or bugs and we will view it or fix it, thanks.</small>
+                    <span>OK</span>
+                </p>
+            </div>
+            <div class="msgInput"> 
+                <textarea name="feedback" cols="30" rows="10" placeholder="Comment here..."></textarea>
+                <div class="bx bx-send" id="sendBtn"></div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="/js/FeedBack.js"></script>
+</body>
+</html>

@@ -1,0 +1,286 @@
+:root{
+    --bgColor:  #050c74;
+    --fillColor: #eeeeee5e;
+}
+.ConfirmationBody{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45%;
+    margin: 15px auto;
+    background-color: var(--bgColor);
+    border-radius: 4px;
+    transform: translateY(-114%) scale(.7);
+    transition: transform 1s, visibility 0.2s, ease-out linear;
+    z-index: 1500;
+}
+.fadeInWBbody{
+    transform: translateY(0%) scale(1, 1.05);
+}
+.animateWBbody{
+    animation: animateFrame 0.5s alternate-reverse infinite;
+
+}
+.ConfirmationBody:active, .ConfirmationBody:hover{
+    animation: animateFrame 10s linear;
+}
+.ConfirmationMessage .ConfirmationHeader{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    background-color: var(--bgColor);
+    color: #e6ffff;
+    font-size: 0.7em;
+    font-weight: 600;
+    width: 100%;
+    line-height: 25px;
+    border-radius: 4px;
+    text-shadow: 2px 2px 2px rgba(61, 119, 189, 0.913);
+    transform: scale(1, 1.2);
+}
+.ConfirmationMessage .ConfirmationHeader #timeout{
+    display: flex;
+    position: absolute;
+    right: 50px;
+    font-weight: 100;
+    color: rgb(26, 255, 0);
+    font-size: 1.5em;
+    text-shadow: none;
+}
+.ConfirmationMessage .ConfirmationHeader #timeout #sec{
+    display: flex;
+    color: rgb(26, 255, 0);
+    padding-top: 1px;
+    padding-left: 1px;
+    text-shadow: none;
+    font-size: 0.8em
+}
+.ConfirmationMessage{
+    display: inline;
+    width: 100%;
+    margin: 20px;
+    background-color: #eeeeee5e;
+    border-radius: 4px;
+    padding: 10px;
+}
+.ConfirmationMessage p{
+    display: flex;
+    justify-content: center;
+    color: #dbf7ff;
+    font-size: 0.7em;
+    text-align: center;
+    transform: scale(1, 1.1);
+}
+.ConfirmationMessage #time {
+    font-size: 0.6em;
+    margin: 4px 0;
+    color: #000000;
+    transform: scale(1, 1.1);
+}
+.ConfirmationMessage div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    height: 25px;
+    margin-top: 5px;
+    gap: 60px;
+}
+.ConfirmationMessage .ConfirmationImg{
+    margin-bottom: 5px;
+    height: 60px;
+}
+.ConfirmationMessage img{
+    width: 55px;
+    height: 55px;
+    border: #050c74 solid 2px;
+    border-radius: 100%;
+    background-color: #def3f9;
+}
+#accept, #reject{
+    background-color: var(--bgColor);
+    border: #dbf7ff solid 1px;
+    padding: 4px 10px;
+    border-radius: 8px;
+    color:  #dbf7ff;
+    font-size: 0.7em;
+    transform: scale(1, 1.1);
+    box-shadow: 2px 2px 8px rgba(23, 21, 21, 0.315), 2px 2px 4px rgba(67, 195, 218, 0.393);
+    transition: border 0.3s, background-color 0.9s, color 0.3s, font-size 1.5s ease-in;
+}
+#reject{
+    background-color: #e5f6fa;
+    color: var(--bgColor);
+    border: var(--bgColor) solid 1px;
+}
+#accept:active{
+    font-size: 0.65em;
+    border:  #050c74 solid 1px;
+    background-color: #e6f5f9;
+    color:  #050c74;
+}
+#reject:active{
+    font-size: 0.65em;
+    border: #dbf7ff solid 1px;
+    background-color:  #050c74;
+    color: #dbf7ff;
+}
+@keyframes animateFrame {
+    50% {
+        transform: translateY(0%) scale(1, 1.05);
+    }
+    100% {
+        transform: translateY(5%) scale(1, 1.05);
+    }
+}
+@media (max-width: 300px) and (orientation: portrait) {
+    .ConfirmationBody{
+        width: 100%;
+        height: 200px;
+        margin: 0 auto;
+        font-size: 0.9em;
+        background-color: transparent;
+    }
+    .fadeInWBbody{
+        transform: translateY(-7%) scale(1, .8);
+    }
+    .ConfirmationMessage .ConfirmationHeader #timeout{
+        right: 17px;
+    }
+    .ConfirmationMessage{
+        background-color: var(--bgColor);
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: fit-content;
+        min-width: 95%;
+        margin: 20px auto;
+        padding-bottom: 20px;
+    }
+    .ConfirmationMessage .ConfirmationHeader{
+        background-color:  #03034d5e;
+    }
+    .ConfirmationMessage img{
+        width: 57px;
+        margin-top: 3px;
+    }
+    .ConfirmationMessage #time {
+        margin: 5px 0;
+        color: #dbf7ff;
+    }
+    .ConfirmationMessage div{
+        gap: 50px;
+        margin: 0;
+    }
+    @keyframes animateFrame {
+        50% {
+            transform: translateY(-7%) scale(1, .9);
+        }
+        100% {
+            transform: translateY(-2%) scale(1, .9);
+        }
+    }
+}
+@media (min-width: 300px) and (max-width: 481px) and (orientation: portrait) {
+    .ConfirmationBody{
+        width: 100%;
+        height: 200px;
+        margin: 0 auto;
+        font-size: 0.9em;
+        background-color: transparent;
+    }
+    .fadeInWBbody{
+        transform: translateY(0%) scale(1, .9);
+    }
+    .ConfirmationMessage .ConfirmationHeader #timeout{
+        right: 20px;
+    }
+    .ConfirmationMessage{
+        background-color: var(--bgColor);
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: fit-content;
+        min-width: 95%;
+        margin: 20px auto;
+        padding-bottom: 20px;
+    }
+    .ConfirmationMessage .ConfirmationHeader{
+        background-color:  #03034d5e;
+        transform: scale(1, 1.2);
+    }
+    .ConfirmationMessage #time {
+        margin: 5px 0;
+        color: #dbf7ff;
+    }
+    .ConfirmationMessage img{
+        width: 57px;
+        margin-top: 3px;
+    }
+    .ConfirmationMessage div{
+        gap: 50px;
+        margin: 0;
+    }
+    @keyframes animateFrame {
+        50% {
+            transform: translateY(0%) scale(1, .9);
+        }
+        100% {
+            transform: translateY(5%) scale(1, .9);
+        }
+    }
+}
+@media (max-height: 481px) and (orientation: landscape)  {
+    .ConfirmationBody{
+        width: 100%;
+        height: 170px;
+        margin: 0 auto;
+        font-size: 0.9em;
+        background-color: transparent;
+    }
+    .fadeInWBbody{
+        transform: translateY(-7%) scale(1, .8);
+    }
+    .ConfirmationMessage{
+        background-color: var(--bgColor);
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: fit-content;
+        min-width: 75%;
+        margin: 10px auto;
+        padding-bottom: 10px;
+        transform: scale(.9);
+    }
+    .ConfirmationImg img{
+        width: 50px;
+    }
+    .ConfirmationMessage #time {
+        margin: 5px 0;
+        color: #dbf7ff;
+    }
+    .ConfirmationMessage div{
+        margin: auto;
+    }
+    #accept, #reject{
+        font-size: 0.9em;
+        transform: scale(.9, 1.1);
+    }
+    @keyframes animateFrame {
+        50% {
+            transform: translateY(-7%) scale(1, .8);
+        }
+        100% {
+            transform: translateY(-2%) scale(1, .8);
+        }
+    }
+}

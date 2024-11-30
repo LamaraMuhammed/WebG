@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/close-watch.css">
+    
+    <!-- Socket  -->
+    <script src="/socket.io/socket.io.js"></script>
+    
+    <title>WebG</title>
+<body>
+    <div class="container">
+        <table>
+            <header>
+                <b id="nav">&#10142;</b>
+                <h3>WebG</h3>
+            </header>
+            <caption>
+                <h4>Close Watch</h4>
+                <p>
+                    Add the number of people you trust and consent to see you or track you everytime in case of missing on the way, kidnap or phone stolen.
+                    We are really love you and concerned of your privacy. 
+                </p>
+            </caption>
+            <tr>
+                <th></th>
+                <th id="phoneNo">Phone Number</th>
+                <th>Person</th>
+                <th>Action</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+
+            <tbody id="tbody">
+                <tr>
+                    <td>1</td>
+                    <td id="phoneNo_1"></td>
+                    <td id="status_1"></td>
+                    <td id="action_1"></td>
+                    <td id="edit_1"></td>
+                    <td id="del_1"></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td id="phoneNo_2"></td>
+                    <td id="status_2"></td>
+                    <td id="action_2"></td>
+                    <td id="edit_2"></td>
+                    <td id="del_2"></td>
+                </tr>
+                <tr>
+                    <td>3</td>   
+                    <td id="phoneNo_3"></td>
+                    <td id="status_3"></td>
+                    <td id="action_3"></td>
+                    <td id="edit_3"></td>
+                    <td id="del_3"></td>
+                </tr>
+                <tr >
+                    <td>4</td>
+                    <td id="phoneNo_4"></td>
+                    <td id="status_4"></td>
+                    <td id="action_4"></td>
+                    <td id="edit_4"></td>
+                    <td id="del_4"></td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr id="empty">
+                    <td></td>
+                    <td id="err" colspan="4"></td>
+                </tr>
+                <tr id="footer">
+                    <td colspan="5"><input type="text" placeholder="Add the Number here" maxlength="15"></td>
+                    <td><button id="btn">Add</button></td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+    <script type="module" src="/js/close-watch.js"></script>
+</body>
+</html>

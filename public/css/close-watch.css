@@ -1,0 +1,354 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    height: 375px;
+    margin: 0 auto;
+    padding: 0 50px;
+    justify-content: center;
+    overflow: hidden;
+}
+.container header{
+    display: flex;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #050c74;
+    color: #fff;
+    line-height: 30px;
+}
+.container header b{
+    transform: rotate(180deg) scale(0.9);
+    margin-left: 17px;
+    cursor: default;
+}
+.container header h3{
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    padding-right: 20px;
+}
+.container caption p{
+    display: flex;
+    text-align: center;
+    word-wrap: break-word;
+    font-size: 0.9em;
+}
+.container table{
+    border-collapse: collapse;
+}
+.container th, td{
+    text-align: left;
+    padding: 7px 10px;
+}
+.container #phoneNo{
+    min-width: 160px;
+}
+.container tr:nth-child(even){
+    background-color: #f2f2f2;
+    border-top: #d9d5d5 2px solid;
+    border-bottom: #d9d5d5 2px solid;
+} 
+.container th{
+    background-color: #050c74;
+    color: #fff;
+    font-size: 0.9em;
+    padding: 7px 17px;
+}
+.container button{
+    display: flex;
+    width: 45px;
+    justify-content: center;
+    font-size: 0.7em;
+    font-weight: 900;
+    padding: 0px 4px;
+    line-height: 25px;
+    background-color: #050c74;
+    border: 2px solid #fff;
+    border-radius: 4px;
+    color: #ffffff;
+    transform: scale(1);
+    transition: transform 0.3s, ease linear;
+}
+.container button:active:not(button:disabled){
+    transform: scale(0.9);
+}
+.container caption{
+    margin: 25px auto;
+    text-align: left;
+}
+.container h4{
+    text-align: center;
+    margin: 5px auto;
+    color: #050c74;
+    text-decoration: underline;
+}
+.container tfoot{
+    background-color: #fff;
+}
+.container tfoot #footer{
+    border-top: #050c74 2px solid;
+    border-bottom: #050c74 2px solid;
+}
+.container tfoot #empty td{
+    padding-top: 10px;
+    background-color: #fff;
+}
+.container tfoot tr td input{
+    width: 100%;
+    display: flex;
+    margin: 0;
+    line-height: 25px;
+    text-indent: 11px;
+    border: #050c7471 2px solid;
+    outline: none;
+    border-radius: 4px;
+}
+.container tfoot tr td input:focus{
+    border: #00ff00 solid 2px;
+}
+.container tfoot tr td input::placeholder{
+    color: #2a2a2a;
+}
+.container .edit{
+    background-color: #ffffff;
+    color: #050c74;
+    border: #050c74 1px solid;
+}
+.container .disabled{
+    background-color: #d9d5d5;
+    color: black;
+    border: #d9d5d5 1px solid;
+}
+.container tfoot #err{
+    color: red;
+    font-size: 0.85em;
+    transform: translateX(45%);
+}
+@media (max-width: 300px) and (orientation: portrait) {
+    .container{
+        width: 100%;
+        padding: 0 10px;
+        display: flex;
+        height: 100%;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        scrollbar-width: none;
+    }
+    .container::-webkit-scrollbar{
+        width: 0;
+    }
+    .container header h3{
+        font-size: 0.9em;
+        transform: scale(1, 1.1);
+    }
+    .container th, td{
+        text-align: left;
+        padding: 7px 5px;
+        font-size: 0.7em;
+        transform: scale(1, 1.1);
+    }
+    .container #phoneNo{
+        min-width: 100%;
+    }
+    .container th{
+        background-color: #050c74;
+        color: #fff;
+        font-size: 0.6em;
+        padding: 7px 5px;
+        transform: scale(1, 1.1);
+    }
+    .container button{
+        width: 40px;
+        font-size: 0.7em;
+        padding: 0px;
+        line-height: 20px;
+        transform: scale(1, 1.1);
+    }
+    .container button:active:not(button:disabled){
+        transform: scale(0.9);
+    }
+    .container caption{
+        margin: 36px auto;
+    }
+    .container caption p{
+        display: flex;
+        text-align: center;
+        word-wrap: break-word;
+        font-size: 0.75em;
+        transform: scale(1, 1.1);
+    }
+    .container h4{
+        font-size: 0.8em;
+        transform: scale(1, 1.1);
+    }
+    .container tfoot #footer{
+        border-top: #050c74 2px solid;
+        border-bottom: #050c74 2px solid;
+    }
+    .container tfoot #empty td{
+        padding-top: 15px;
+        padding-bottom: 15px;
+        background-color: #fff;
+        font-size: 0.6em;
+    }
+    .container tfoot tr td input{
+        font-size: 0.9em;
+        line-height: 22px;
+        transform: scale(1, 1.1);
+    }
+    .container tfoot #err{
+        color: red;
+        font-size: 0.7em;
+        transform: translateX(40%);
+    }
+}
+@media (min-width: 300px) and (max-width: 481px) and (orientation: portrait) {
+    .container{
+        width: 100%;
+        padding: 20px 10px;
+    }
+    .container header h3{
+        font-size: 0.95em;
+        transform: scale(1, 1.1);
+    }
+    .container th, td{
+        text-align: left;
+        padding: 7px 5px;
+        font-size: 0.7em;
+        transform: scale(1, 1.1);
+    }
+    .container #phoneNo{
+        min-width: 100%;
+        width: 100%;
+    }
+    .container th{
+        background-color: #050c74;
+        color: #fff;
+        font-size: 0.6em;
+        padding: 7px 5px;
+        transform: scale(1, 1.1);
+    }
+    .container button{
+        width: 40px;
+        font-size: 0.7em;
+        padding: 0px;
+        line-height: 20px;
+        transform: scale(1, 1.1);
+    }
+    .container button:active:not(button:disabled){
+        transform: scale(1);
+    }
+    .container caption{
+        margin: 36px auto;
+    }
+    .container caption p{
+        display: flex;
+        text-align: center;
+        word-wrap: break-word;
+        font-size: 0.75em;
+        transform: scale(1, 1.1);
+    }
+    .container h4{
+        font-size: 0.85em;
+    }
+    .container tfoot #footer{
+        border-top: #050c74 2px solid;
+        border-bottom: #050c74 2px solid;
+    }
+    .container tfoot #empty td{
+        padding: 15px 0;
+        background-color: #fff;
+        font-size: 0.6em;
+    }
+    .container tfoot tr td input{
+        font-size: 0.9em;
+        line-height: 22px;
+    }
+    .container tfoot #err{
+        color: red;
+        font-size: 0.7em;
+        transform: translateX(40%);
+    }
+}
+
+@media screen and (max-height: 481px) and (orientation: landscape) {
+    .container{
+        width: 75%;
+        padding: 0px 10px;
+        overflow-y: auto;
+        scrollbar-width: none;
+        scroll-behavior: smooth;
+    }
+    .container::-webkit-scrollbar{
+        width: 0;
+    }
+    .container header h3{
+        font-size: 0.9em;
+    }
+    .container th, td{
+        text-align: left;
+        padding: 7px 5px;
+        font-size: 0.7em;
+        transform: scale(1, 1.1);
+    }
+    .container #phoneNo{
+        min-width: 75%;
+        width: 100%;
+    }
+    .container th{
+        background-color: #050c74;
+        color: #fff;
+        font-size: 0.6em;
+        padding: 7px 5px;
+        transform: scale(1, 1.1);
+    }
+    .container button{
+        width: 40px;
+        font-size: 0.7em;
+        padding: 2px;
+        transform: scale(1, 1.1);
+    }
+    .container button:active:not(button:disabled){
+        transform: scale(0.9);
+    }
+    .container caption p{
+        display: flex;
+        text-align: center;
+        word-wrap: break-word;
+        font-size: 0.7em;
+        transform: scale(1, 1.17);
+    }
+    .container h4{
+        font-size: 0.8em;
+        transform: scale(1, 1.1);
+    }
+    .container tfoot #footer{
+        border-top: #050c74 2px solid;
+        border-bottom: #050c74 2px solid;
+        width: 100%;
+    }
+    .container tfoot #empty td{
+        padding-top: 10px;
+        padding-bottom: 10px;
+        background-color: #fff;
+        font-size: 0.6em;
+    }
+    .container tfoot tr td input{
+        font-size: 0.9em;
+        line-height: 22px;
+        transform: scale(1, 1.1);
+    }
+    .container tfoot #err{
+        color: red;
+        font-size: 0.7em;
+        transform: translateX(40%);
+    }
+}

@@ -1,0 +1,627 @@
+.chatContainer *{
+    /* overflow: hidden; */
+    color: black;
+}
+:root{
+    --img-size: 30px;
+}
+.chatContainer{
+    display: grid;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+}
+.chatContainer .chatHeader{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    color: #fff;
+    background-color: #050c74;
+    min-height: 35px;
+}
+.chatHeader nav{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    margin-top: -7px;
+    margin-bottom: -13px;
+}
+.chatHeader #nav{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 20px;
+    font-size: 1.3em;
+    color: #fff;
+    transform: rotateZ(180deg);
+}
+.chatHeader .headItems{
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+}
+.chatHeader nav ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+.chatHeader .headItems h1{
+    display: flex;
+    margin: 0 50px;
+    font-weight: 800;
+    font-size: 1.4em;
+    color: #fff;
+}
+.chatHeader nav img{
+    width: var(--img-size);
+    height: var(--img-size);
+    border-radius: 50px;
+}
+#chatProfilePic{
+    height: 33px;
+    width: 33px;
+}
+.chatHeader nav #headerSelectedFrndImg{
+    display: none;
+}
+.chatContainer .interactiveContainer{
+    display: flex;
+    width: 100%;
+    height: 90vh;
+    margin: 0;
+    padding: 0;
+}
+.interactiveContainer .room, .interactiveContainer .msgDisplayer{
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    height: 90vh;
+    background-color: #050c74;
+}
+.room .infor, .room .friendsBox{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 25%;
+}
+.room .infor{
+    padding: 0px 20px;
+}
+.room .infor p{
+    display: flex;
+    width: 100%;
+    margin: 7px auto 3px auto;
+    color: rgba(205, 243, 243, 0.803);
+    word-break: break-all;
+    font-size: .7em;
+    transform: scale(1, 1.2);
+}
+.room .infor .chatNoteMsg{
+    display: flex;
+    margin: auto;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    font-size: .9em;
+    text-align: center;
+    word-wrap: break-word;
+    word-break: break-all;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    letter-spacing: 5px;
+    word-spacing: 5px;
+    opacity: 0.7;
+    transform: scale(.9, 1.5);
+}
+.infor input{
+    margin: auto;
+    margin-right: 0;
+    appearance: none; 
+    border: rgb(255, 255, 255) double 4px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+}
+.infor input::before{
+    content: '';
+    display: flex;
+    position: absolute;
+    margin: -5px;
+    appearance: none; 
+    border: rgb(255, 255, 255) solid 2px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+}
+.infor input:checked{
+    background-color: #00e70f;
+    border: 4px double rgb(0, 0, 0);
+}
+.room .friendsBox{
+    height: 100%;
+}
+.friendsBox .friend{
+    display: none;
+    margin-bottom: 11px;
+    align-items: center;
+    width: 100%;
+    padding: 7px 20px;
+    background-color: #caceff24;
+    transition: background-color .5s, ease linear;
+}
+.friendsBox .friend:hover{
+    background-color: #4f5cefc6;
+}
+.friend img{
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    background-color: azure;
+}
+.friend h6{
+    margin-left: 11px;
+    color: rgb(240, 255, 255);
+    text-transform: capitalize;
+    transform: scale(1, 1.2);
+}
+.friend .selectedFriend{
+    margin: auto;
+    font-size: 1.2em;
+    font-weight: bolder;
+    color: rgb(5, 255, 5);
+    transform: scale(0);
+    opacity: 0;
+    visibility: hidden;
+    transition: transition 0.3s, opacity 0.6s, ease-out linear;
+}
+.friend .showselectedFriend{
+    visibility: visible;
+    transform: scale(1);
+    opacity: 1;
+}
+.friend .defaultFrnd{
+    transform: scale(1);
+    opacity: 1;
+    visibility: visible;
+    transition: transition .7s, opacity 1s;
+}
+.friend .active{
+    width: 7px;
+    height: 7px;
+    background-color: rgb(5, 255, 5);
+    border-radius: 50px;
+    margin: auto;
+    margin-left: 17%;
+}
+.interactiveContainer .msgDisplayer{
+    width: 75%;
+    padding: 0px 20px;
+    background-color: #5e52522e;
+}
+.msgDisplayer .scroller{
+    padding-top: 11px;
+    padding-bottom: 20px;
+    width: 100%;
+    min-height: 94%;
+    max-height: 94%;
+    overflow-y: auto;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+}
+.msgDisplayer .scroller::-webkit-scrollbar{
+    width: 0;
+}
+.msgDisplayer .blur{
+    filter: blur(.7px);
+}
+.scroller .child{
+    display: inline-flex;
+    width: 75%;
+    margin-bottom: 17px;
+    gap: 10px;
+}
+.scroller .local{
+    float: inline-end;
+    align-content: flex-end;
+    justify-content: flex-end;
+}
+.remote .logo{
+    display: flex;
+    margin: 0 auto;
+}
+.remote img{
+    width: 50px;
+    height: 45px;
+    border-radius: 50%;
+}
+.child .msgBody{
+    display: flex;
+    flex-direction: column;
+    margin-top: 11px;
+    align-items: flex-start;
+    width: 100%;
+}
+.remote h6{
+    display: flex;
+    transform: scale(1, 1.1);
+}
+.child .shape{
+    background-color: #9cc6fe38;
+    border-radius: 0px 25px 30px 25px;
+    margin-top: 7px;
+    padding: 11px 7px 7px 12px;
+}
+.local .shape{
+    padding: 11px 11px 7px 7px;
+    border-radius: 25px 0px 30px 25px;
+    background-color: #5b585820;
+}
+.shape .time{
+    display: flex;
+    width: 100%;
+    margin: auto;
+    padding-top: 7px;
+    padding-right: 17px;
+    justify-content: flex-end;
+}
+.shape p{
+    display: flex;
+    width: 100%;
+    word-wrap: break-word;
+    word-break: normal;
+    font-size: .8em;
+    transform: scale(.97, 1.13);
+}
+.shape small{
+    font-size: .7em;
+    font-weight: 100;
+}
+.chatContainer .chatInput{
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 60px;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    z-index: 2;
+}
+.chatInput .shader{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 12, 65, 0.294);
+}
+.chatInput .inputField{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
+    margin-right: 0;
+    padding: 0 30px 0 20px;
+    width: 75%;
+    height: 100%;
+    z-index: 3000;
+}
+.inputField #showFrndContainer{
+    display: none;
+}
+.inputField textarea{
+    width: 100%;
+    height: 40px;
+    font-size: 1.2em;
+    align-items: center;
+    padding: 7px 10px;
+    margin: auto 25px auto 0px;
+    outline: none;
+    resize: none;
+    border: 2px solid grey;
+    color: black;
+    overflow-y: auto;
+    transform: scale(1, 1.2);
+    z-index: 3001;
+}
+.inputField textarea::placeholder{
+    font-size: .8em;
+}
+.inputField textarea:focus{
+    border: 2px solid #050c74;
+}
+.inputField .bx-send{
+    transform: scale(1.8, 2);
+    color: var(--bg-color);
+}
+.inputField .bx-send:active{
+    transform: scale(1.7, 1.9);
+    color: rgb(0, 13, 255);
+}
+
+@media screen and (max-width: 481px) and (orientation: portrait) {
+    .chatHeader #nav{
+        font-size: 1.2em;
+        margin-left: 10px;
+    }
+    .chatHeader .headItems h1{
+        font-size: 1.2em;
+        margin-bottom: 3px;
+    }
+    .chatHeader nav img{
+        transform: scale(.9);
+    }
+    .interactiveContainer .room{
+        width: 100%;
+        height: 50%;
+        position: absolute;
+        bottom: 0;
+        background-color: #050c74;
+        transform: translateY(100%) scale(.7);
+        transition: transform .4s, ease linear;
+        z-index: 1;
+    }
+    .interactiveContainer .openRoom{
+        transform: translateY(0%) scale(1, 1.1);
+    }
+    .room .friendsBox{
+        height: 100%;
+    }
+    .room .infor{
+        padding: 7px 20px
+    }
+    .room .infor p{
+        font-size: .6em;
+    }
+    .room .infor .chatNoteMsg{
+        font-size: .85em;
+        transform: scale(.9, 1.3);
+    }
+    .infor input::before{
+        content: '';
+        display: none;
+    }
+    .friendsBox .friend{
+        background-color: #b7bdfe1d;
+    }
+    .friendsBox .friend:hover{
+        background-color: #4f5cef9f;
+    }
+    .friend img{
+        width: 40px;
+        height: 40px;
+        border-radius: 100%;
+    }
+    .friend h6{
+        margin-left: 3px;
+        transform: scale(.9, 1.2);
+    }
+    .friend .selectedFriend{
+        transform: scale(0);
+        opacity: 0;
+        visibility: hidden;
+        transition: transition 0.3s, opacity 0.6s, ease-out linear;
+    }
+    .friend .showselectedFriend{
+        visibility: visible;
+        transform: scale(.8);
+        opacity: 1;
+    }
+    .friend .defaultFrnd{
+        transform: scale(.8);
+        opacity: 1;
+        visibility: visible;
+        transition: transition .7s, opacity 1s;
+    }
+    .friend .active{
+        margin-left: 11%;
+    }
+    .interactiveContainer .msgDisplayer{
+        width: 100%;
+        padding: 0px 10px;
+    }
+    .msgDisplayer .scroller{
+        padding-bottom: 36px;
+    }
+    .scroller .child{
+        margin-bottom: 11px;
+        width: 80%;
+        gap: 7px;
+    }
+    .scroller .remote{
+        width: 85%;
+    }
+    .remote img{
+        width: 45px;
+        height: 35px;
+    }
+    .child .shape{
+        padding: 11px 11px 7px 12px;
+    }
+    .local .shape{
+        padding: 11px 11px 7px 17px;
+    }
+    .shape p{
+        font-size: .73em;
+        transform: scale(1);
+    }
+    .shape small{
+        font-size: .55em;
+    }
+    .chatInput .inputField{
+        width: 100%;
+        padding: 0 10px;
+        margin: auto;
+    }
+    .inputField #showFrndContainer{
+        display: flex;
+        transform: scale(1.1, 1.2);
+    }
+    .inputField textarea{
+        width: 100%;
+        height: 35px;
+        font-size: 1.17em;
+        align-items: center;
+        padding: 5px 10px 7px 10px;
+        margin: auto 17px;
+        resize: none;
+        color: black;
+        overflow-y: auto;
+        transform: scale(1, 1.1);
+    }
+    .inputField .bx-send{
+        display: flex;
+        float: inline-start;
+        margin: auto;
+        margin-right: 11px;
+        transform: scale(1.7, 1.9);
+        color: var(--bg-color);
+    }
+    .inputField .bx-send:active{
+        transform: scale(1.6, 1.8);
+        color: rgb(0, 13, 255);
+    }
+}
+@media screen and (max-height: 481px) and (orientation: landscape) {
+    .chatHeader nav{
+        margin: 0
+    }
+    .chatHeader #nav{
+        font-size: 1.2em;
+    }
+    .chatHeader .headItems h1{
+        font-size: 1.2em;
+    }
+    .chatHeader nav img{
+        transform: scale(.8);
+        border-radius: 50px;
+    }
+    .interactiveContainer .room{
+        width: 100%;
+        height: 45%;
+        position: absolute;
+        bottom: 0;
+        background-color: #050c74;
+        transform: translateY(100%) scale(.7);
+        transition: transform .4s, ease linear;
+        z-index: 1;
+    }
+    .interactiveContainer .openRoom{
+        transform: translateY(0%) scale(1, 1.1);
+    }
+    .room .friendsBox{
+        height: 100%;
+    }
+    .room .infor{
+        padding: 7px 20px
+    }
+    .room .infor p{
+        font-size: .6em;
+        transform: scale(1, 1.1);
+    }
+    .room .infor .chatNoteMsg{
+        font-size: .85em;
+        transform: scale(.9, 1.3);
+    }
+    .infor input::before{
+        content: '';
+        display: none;
+    }
+    .friendsBox .friend{
+        background-color: #b7bdfe1d;
+    }
+    .friendsBox .friend:hover{
+        background-color: #4f5cef9f;
+    }
+    .friend img{
+        width: 40px;
+        height: 40px;
+        border-radius: 100%;
+    }
+    .friend h6{
+        margin-left: 3px;
+        transform: scale(.9, 1.2);
+    }
+    .friend .selectedFriend{
+        transform: scale(0);
+        opacity: 0;
+        visibility: hidden;
+        transition: transition 0.3s, opacity 0.6s, ease-out linear;
+    }
+    .friend .showselectedFriend{
+        visibility: visible;
+        transform: scale(.8);
+        opacity: 1;
+    }
+    .friend .defaultFrnd{
+        transform: scale(.8);
+        opacity: 1;
+        visibility: visible;
+        transition: transition .7s, opacity 1s;
+    }
+    .friend .active{
+        margin-left: 11%;
+    }
+    .interactiveContainer .msgDisplayer{
+        width: 100%;
+        padding: 0px 20px;
+    }
+    .msgDisplayer .scroller{
+        padding-bottom: 50px;
+    }
+    .scroller .child{
+        margin-bottom: 11px;
+        gap: 11px;
+    }
+    .remote img{
+        width: 43px;
+        height: 37px;
+    }
+    .local .shape{
+        padding: 11px 11px 7px 17px;
+    }
+    .shape p{
+        font-size: .8em;
+        transform: scale(1);
+    }
+    .shape small{
+        font-size: .6em;
+    }
+    .chatInput .inputField{
+        width: 100%;
+        padding: 0 20px;
+        margin: auto;
+    }
+    .inputField #showFrndContainer{
+        display: flex;
+        transform: scale(1.1, 1.2);
+    }
+    .inputField textarea{
+        width: 100%;
+        height: 35px;
+        font-size: 1.17em;
+        align-items: center;
+        padding: 7px 10px;
+        margin: auto 17px;
+        resize: none;
+        color: black;
+        overflow-y: auto;
+        transform: scale(1, 1.1);
+    }
+    .inputField .bx-send{
+        display: flex;
+        float: inline-start;
+        margin: auto;
+        margin-right: 11px;
+        transform: scale(1.7, 1.9);
+        color: var(--bg-color);
+    }
+    .inputField .bx-send:active{
+        transform: scale(1.6, 1.8);
+        color: rgb(0, 13, 255);
+    }
+}

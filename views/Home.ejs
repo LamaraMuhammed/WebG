@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=7">
+    <meta name="description" content="">
+
+    <!-- Main Style -->
+    <link rel="stylesheet" href="/css/css.css">
+    <link rel="stylesheet" href="/css/mobileView/mobile_home_style.css">
+    <!-- <link rel="stylesheet" href="/css/home.css"> -->
+
+    <!-- Chat style -->
+    <link rel="stylesheet" id="chatLink">
+
+    <!-- Notif-popUp style -->
+    <link rel="stylesheet" href="/css/Notif-popUp.css">
+    <link rel="stylesheet" href="/css/Confirmation-popUp.css">
+    <!-- Notification Style -->
+     <link rel="stylesheet" href="/css/Notification.css">
+
+    <!-- Socket  -->
+    <script src="/socket.io/socket.io.js"></script>
+
+    <!-- Leaflet css -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+
+    <!-- Leaflet js -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""></script>
+
+    <!-- ------------------------------------ Leaflet Plugins ------------------------------------------------ -->
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" />
+    <link rel="stylesheet" href="/leaflet-routing-machine/dist/leaflet-routing-machine.css" />
+    
+    <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
+    <script src="/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    
+    <link rel="stylesheet" href="/leaflet.markercluster/dist/MarkerCluster.Default.css" />
+    <script src="/leaflet.markercluster/dist/leaflet.markercluster.js"></script>
+    
+    <!-- Boxicons -->
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+
+    <title>WebG</title>
+
+</head>
+<body>
+    <section class="container">
+        <div class="newReqAlert"><i>You got a new request.</i><small id="newReqS"></small></div>
+        <!-- -----------------------------------    HOME CONTENT SECTION   --------------------------------------------- -->
+        <section id="homeContentSection">
+            <div class="header">
+                <nav>
+                    <h1>WebG</h1>
+                    <ul>
+                        <li id="readOut"></li>
+                        <li><img id="profilePic"></li>
+                        <li><span class="accSignal"></span></li>
+                        <li>
+                            <div class="bx bx-bell" id="notification"></div>
+                            <div class="symbol">
+                                <span id="symbol"></span>
+                            </div>
+                        </li>
+                        <li><div class="bx bx-dots-vertical-rounded" id="menu"></div></li>
+                        <li>
+                            <div class="setting_container">
+                                <div class="st_header">
+                                    <b id="sett-nav">&#10005;</b>
+                                    <h4>Profile</h4>
+                                </div>
+                                <div class="setting_content">
+                                    <span id="docorator"></span>
+                                    <div class="content">
+                                        <div id="set-prof-img">
+                                            <div class="imgFolder">
+                                                <img id="set-img">
+                                                <label for="_profileImgUploader" id="editProfileImg">
+                                                    <div class="bx bx-pencil"  id="pnc"></div>
+                                                </label>
+                                                <input type="file" accept="image/jpeg, image/png, image/jpg" id="_profileImgUploader">
+                                            </div>
+                                            <div class="name">
+                                                <p id="username"></p>
+                                                <span id="sim"></span>
+                                                <span id="imgLoadErr"></span>
+                                            </div>
+                                        </div>
+    
+                                        <ol>
+                                            <li><a href="/WebG/Account-Setting">Account Setting <div class="bx bx-cog"></div></a></li>
+                                            <li><a href="/WebG/Close-Watch">Close Watch <div class="bx bx-globe-alt"></div></a></li>
+                                            <li class="trip">
+                                                <a id="trip">Trip Bank <div class="bx bxs-objects-vertical-center"></div></a>
+                                                <div class="trip container">
+                                                    <div class="tripContent">
+                                                        <small id="recInfor"></small>
+                                                        <div id="playTrip" class="bx bx-play"></div>
+                                                        <div id="delTrip" class="bx bx-x"></div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li id="automate">
+                                                Automate
+                                                <span id="isAutomate">&#10003;</span>
+                                            </li>
+                                            <li><a id="lang">Language</a><div class="bx bx-font-color"></div></li>
+                                            <li><a href="/WebG/About">About the WebG <div class="bx bxs-help-circle"></div></a></li>
+                                            <li><a href="/WebG/FeedBack">Report a problem / Feedback</a> <div class="bx bxs-info-circle"></div></li>
+                                            <li><a id="log">Log In</a> <div class="bx bxs-door-open"></div></li>
+                                        </ol>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="buddies">
+                    <ul>
+                        <li id="friend" class="firstFrnd" onclick="show_buddiesPanel('first')">
+                            <div class="bx bx-mail-send" id="first-frnd-msgIcon"></div>
+                        </li>
+                        <li id="friend" class="secondFrnd" onclick="show_buddiesPanel('second')">
+                            <div class="bx bx-mail-send" id="second-frnd-msgIcon"></div>
+                        </li>
+                        <li id="friend" class="thirdFrnd" onclick="show_buddiesPanel('third')">
+                            <div class="bx bx-mail-send" id="third-frnd-msgIcon"></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="rec">
+                <div class="onRecording">
+                    <ul>
+                        <li id="startStopTime">00:00</li>
+                        <li><div id="startStop" class="bx bx-play"></div></li>
+                        <li><div id="saveRecording" class="bx bx-check"></div></li>
+                        <li><div id="deleteRecording" class="bx bx-x"></div></li>
+                    </ul>
+                </div>
+                <div id="displayRec" class="bx bx-caret-right-circle"></div>
+            </div>
+            <!-- --------------------------------   CONNECTED FRIENDS PANEL SECTION   -------------------------------- -->
+            <section class="buddiesPanel" id="bud-panel">
+                <div class="buddiesContent">
+                    <h4>Quick Lookup</h4>
+                    <p id="note"><b>Note:</b> <i></i>When the color of Accuracy or Network turned to red the Accuracy is probably not perfect.</i></p>
+                    <div>
+                        <ul>
+                            <li>
+                                <b>Name</b>
+                                <p id="palName1"></p>
+                                <p id="palName2"></p>
+                                <p id="palName3"></p>
+                            </li>
+                            <li>
+                                <b>Location</b>
+                                <p id="Loc1"></p>
+                                <p id="Loc2"></p>
+                                <p id="Loc3"></p>
+                            </li>
+                            <li>
+                                <b>Distance</b>
+                                <p id="dist1"></p>
+                                <p id="dist2"></p>
+                                <p id="dist3"></p>
+                            </li>
+                            <li>
+                                <b>Network</b>
+                                <p id="Network1"></p>
+                                <p id="Network2"></p>
+                                <p id="Network3"></p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="quickNote">
+                        <div id="quickFrndMsgList">
+                            <p class="defaultMsg" id="msgs1"></p>
+                            <p class="defaultMsg" id="msgs2"></p>
+                            <p class="defaultMsg" id="msg3"></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- ShareLoc PopUp -->
+            <section class="shareLoc-popup">
+                <div class="shr-phNo">
+                    <i>Number Only</i>
+                    <div class="shareLocInput">
+                        <label for="shr-phNo" id="shr-lbl">+234</label>
+                        <input id="shr-phNo" type="text" placeholder="Phone Number" maxlength="11">
+                    </div>
+                    <div>
+                        <button id="shr">ShareLoc</button>
+                        <button id="No-shr">No ShareLoc</button>
+                    </div>
+                </div>
+                <span id="shower" class="showerRight"></span>
+                <div class="shr-psNo"></div>
+            </section>
+            <!-- -------------------------------------  #MAP SECTION -------------------------------------- -->
+            <div id="map"></div> 
+            <!-- -------------------------------------  EXPANDER SECTION  ------------------------------------- -->
+            <section>
+                <div class="menus">
+                    <div class="customInd">
+                        <small>Customize your pop-up</small>
+                        <textarea placeholder="Type your quick message here..." id="textArea"></textarea>
+                        <img id="customIndImg">
+                        <i id="delImg">&#10005;</i>
+                        <div>
+                            <button id="setCustomInd">Set</button>
+                            <button id="editCustomInd">Edit</button>
+                            <label for="imgUploader" id="label">Add Image</label>
+                            <input type="file" accept="image/jpeg, image/png, image/jpg" id="imgUploader">
+                        </div>
+                    </div>
+                    <div class="expander-items">
+                        <div class="Ilustration" id="Illus">
+                            <button id="Ilustration_btn" onclick="active_expander_button_items('Illustration')">Ilustration <div id="exp-icon-4" class="bx bxs-pointer"></div></button>
+                            <div class="illus">
+                                <ul>
+                                    <li id="Self">Self <div class="bx bxs-user"></div></li>
+                                    <li id="Both">Both <div class="bx bxs-group"></div></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="Clear" id="Clear">
+                            <button id="Clear_btn" onclick="active_expander_button_items('Clear')">Clear <div id="exp-icon5" class="bx bxs-eraser"></div></button>
+                            <div class="deletion">
+                                <ul>
+                                    <li id="delOne">Delete One</li>
+                                    <li id="delAll">Delete All</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="recordMe" id="recordMe">
+                            <button id="recordMe_btn" onclick="active_expander_button_items('recordMe')">RecordMe <div id="exp-icon-3" class="bx bx-play-circle"></div></button>
+                            <div class="record">
+                                <ul>
+                                    <li id="default">Default <div class="bx bx-hash"></div></li>
+                                    <li id="customR">Custom <div class="bx bx-highlight"></div></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="indicators" id="indicators">
+                            <button id="indicators_btn" onclick="active_expander_button_items('indicators')">Indicators <div id="exp-icon-2" class="bx bxs-map-pin"></div></button>
+                            <div class="IndicatorDropDownMenu">
+                                <ul>
+                                    <li id="def-icon">Icon <div class="bx bx-map"></div></li>
+                                    <li id="Home">Home <div class="bx bxs-home"></div></li>
+                                    <li id="School">School <div class="bx bxs-graduation"></div></li>
+                                    <li id="Instituation">Instituation<div class="bx bxs-business"></div></li>
+                                    <li id="Bank">Bank <div class="bx bxs-bank"></div></li>
+                                    <li id="Store">Store <div class="bx bxs-store-alt"></div></li>
+                                    <li id="custom">Custom <div class="bx bx-highlight"></div></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="my-area" id="my-area">
+                            <button id="my_area_btn" onclick="active_expander_button_items('my-area')">My Boundry <div id="exp-icon-1" class="bx bx-street-view"></div></button>
+                            <div class="boundryDropDownMenu">
+                                <ul>
+                                    <li id="myPos">My pos <div id="posIcon" class="bx bx-target-lock"></div></li>
+                                    <li id="Post">Post <div class="bx bxs-share"></div></li>
+                                    <li id="Call">Call <div class="bx bxs-phone-call"></div></li>
+                                    <li id="Measurement">Measurement <div class="bx bxs-traffic-cone"></div></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="expander">
+                    <div class="bx bx-aperture"></div>
+                </div>
+            </section> 
+        </section>
+        <!-- ---------------------------------Confirmation PopUp ----------------------------------------------- -->
+        <div class="ConfirmationBody">
+            <div class="ConfirmationMessage">
+                <h4 class="ConfirmationHeader">ShareLoc Request <span id="timeout"><small id="sec">s</small></span></h4>
+                <div class="ConfirmationImg">
+                    <img id="ConfirmationImgTag" alt="WebG">
+                </div>
+                <p id="person"></p>
+                <p id="time"></p>
+                <div>
+                    <button id="accept">Accept</button>
+                    <button id="reject">Reject</button>
+                </div>
+            </div>
+        </div> 
+        <!-- --------------------------------- User log out Consent PopUp -------------------------------------------- -->
+        <div class="userConsent">
+            <div class="bx bx-x" id="closeMea"></div>
+            <p id="messageToUser"></p>
+            <div>
+                <button id="yes">Yes</button>
+                <button id="no">No</button>
+            </div>
+        </div>
+        <!-- ---------------------------------------------- WELCOME BOARD ---------------------------------------------------- -->
+            <div class="welcomeBoard" id="WBdisplay">
+                <div class="WBbody">
+                    <div>
+                        <h3>Hi Buddy</h3>
+                    </div>
+                    <p id="logNote">You need to be log into your account!</p>
+                    <div>
+                        <p>We really love you and concerned about your privacy.</p>
+                        <p><i>To have details of how to use the website click on</i><br>
+                            <p><a href="/WebG/readMe">ReadMe</a></p>
+                        </p>
+                    </div>
+                    <a href="/WebG/LogIn" id="Log">OK</a>
+                </div>
+            </div>
+        <!-- -------------------------------------    TOAST   -------------------------------------- --> 
+        <div class="toast" id="toast">
+            <small id="toastPara"></small>
+        </div>
+
+        <!-- -------------------------------------------- Notification Section ------------------------------------- -->
+        <section id="NotificationContainer">
+            <div class="NTheader">
+                <nav>
+                    <b id="NTnav">&#10142;</b>
+                    <span>WebG</span>
+                </nav>
+            </div>
+            <!-- Notification Body -->
+            <section class="outerContainer"></section>
+        </section>
+        <!-- -------------------------------------  CHAT SECTION.  -------------------------------------- -->
+        <section class="Chat_Section">
+            <!-- Chat Design Container -->
+            <div class="chatContainer">
+                <div class="chatHeader">
+                    <nav>
+                        <div id="nav">&#10142;</div>
+                        <div class="headItems">
+                            <ul>
+                                <li><img id="headerSelectedFrndImg"></li>
+                                <li><h1>WebG</h1></li>
+                                <li><img id="chatProfilePic"></li>  
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+                <div class="interactiveContainer">
+                    <div class="room">
+        
+                        <div class="infor">
+                            <p id="chatNote"></p>
+                            <input type="checkbox" id="myCheckBox">
+                        </div>
+        
+                        <div class="friendsBox">
+        
+                            <div class="firstF friend">
+                                <img id="firstFriendImg">
+                                <h6 id="firstFriendName"></h6>
+                                <div class="active"></div>
+                                <span class="selectedFriend" id="firstCheckedFriend">&#10003;</span>
+                            </div>
+                            <div class="secondF friend">
+                                <img id="secondFriendImg">
+                                <h6 id="secondFriendName"></h6>
+                                <div class="active"></div>
+                                <span class="selectedFriend" id="secondCheckedFriend">&#10003;</span>
+                            </div>
+                            <div class="thirdF friend">
+                                <img id="thirdFriendImg">
+                                <h6 id="thirdFriendName"></h6>
+                                <div class="active"></div>
+                                <span class="selectedFriend" id="thirdCheckedFriend">&#10003;</span>
+                            </div>
+        
+                        </div>
+                    </div>
+                    <div class="msgDisplayer">
+                        <div class="scroller"></div>
+                    </div>
+                </div>
+                <div class="chatInput">
+                    <div class="shader">
+                        <div class="inputField">
+                            <div class="bx bx-chevrons-up" id="showFrndContainer"></div>
+                            <textarea name="msg" id="msgInput" placeholder="Type your message here"></textarea>
+                            <div class="bx bx-send" id="sendBtn"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- -------------------------------------  BOTTOM APP BAR ITEMS  -------------------------------------- -->
+        <section class="footer">
+            <ul>
+                <li>
+                    <div>
+                        <div id="home" class="bx bx-home" onclick="activeButton('home')"><span id="sp-home">Home</span></div>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <div id="shareLoc" class="bx bx-trip"><span id="sp-shareLoc">ShareLoc</span></div>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <div id="chat" class="bx bx-chat" onclick="activeButton('chat')"><span id="sp-chat">Chat</span></div>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <div id="tour" class="bx bxs-business" onclick="activeButton('tour')"><span id="sp-tour">&nbsp;Tour</span></div>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <div id="readMe" class="bx bxs-book-open" onclick="activeButton('readMe')"><span id="sp-readMe">ReadMe</span></div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+    </section>
+    <script src="/js/Home/main.js"></script>
+    <script src="/js/Home/map.js"></script>
+    <script src="/js/Home/_chat.js"></script>
+    <!-- --------------------------------- MODULES ------------------------------------- -->
+    <script type="module" src="/js/Home/request.js"></script>
+    <script type="module" src="/js/Home/sub_main.js"></script>
+    <script type="module" src="/js/Home/message.js"></script>
+    <script type="module" src="/js/Home/notification.js"></script>
+</body>
+</html>
